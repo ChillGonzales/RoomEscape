@@ -39,7 +39,8 @@ void UOpenDoor::TickComponent( float DeltaTime, ELevelTick TickType, FActorCompo
 }
 
 void UOpenDoor::OpenDoor() {
-
+	AActor* owner = GetOwner();
+	owner->GetTransform.SetActorRotation()
 }
 void UOpenDoor::CloseDoor() {
 	
@@ -54,6 +55,6 @@ float UOpenDoor::CheckPressurePlateWeight() {
 			totalWeight += act->FindComponentByClass<UPrimitiveComponent>()->GetMass();
 		}
 	}
-	delete &overlappingActors;
+	//delete &overlappingActors;
 	return totalWeight;
 }
